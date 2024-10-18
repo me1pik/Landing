@@ -10,7 +10,9 @@ function App() {
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
       <Router>
-        <Route path='/' element={<Landing />} />
+        <Routes>
+          <Route path='/' element={<Landing />} />
+        </Routes>
       </Router>
     </ThemeProvider>
   );
