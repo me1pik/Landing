@@ -38,13 +38,16 @@ const LandingPage1 = () => {
               지금 시작하기
             </StartButton>
             <IconContainer>
-              <Icon src={SelectIcon} alt='Select Icon' />
-              <HeartIconContainer onClick={handleHeartClick}>
-                <Icon
-                  src={isHeartClicked ? HeartClickIcon : HeartIcon}
-                  alt='Heart Icon'
-                />
-              </HeartIconContainer>
+              <StyledIcon src={SelectIcon} alt='Select Icon' />
+              <HeartIconWrapper onClick={handleHeartClick}>
+                <StyledIcon src={HeartIcon} alt='Heart Icon' />
+                {isHeartClicked && (
+                  <StyledOverlayIcon
+                    src={HeartClickIcon}
+                    alt='Heart Click Icon'
+                  />
+                )}
+              </HeartIconWrapper>
             </IconContainer>
           </ButtonContainer>
         </Box>
@@ -59,24 +62,6 @@ const LandingPage1 = () => {
 };
 
 export default LandingPage1;
-
-const HeartIconContainer = styled.div`
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-`;
-
-const Header = styled.header`
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  z-index: 10;
-  max-width: 600px;
-  margin-top: 41px;
-`;
 
 const Container = styled.div`
   position: relative;
@@ -94,37 +79,16 @@ const Container = styled.div`
   border-right: 1px solid ${Theme.colors.gray1};
 `;
 
-const Box = styled.div`
-  position: relative;
+const Header = styled.header`
+  position: fixed;
+  top: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 405px;
-  border-radius: 30px;
-  margin-top: 16px;
-`;
-
-const BoxImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-  z-index: -1;
-`;
-
-const BackgroundImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: blur(2px);
+  z-index: 10;
+  max-width: 600px;
+  margin-top: 41px;
 `;
 
 const Logo = styled.img`
@@ -177,12 +141,46 @@ const HighlightText = styled.span`
   color: #000000;
 `;
 
+const Box = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 405px;
+  border-radius: 30px;
+  margin-top: 16px;
+`;
+
+const BoxImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  z-index: -1;
+`;
+
+const BackgroundImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(2px);
+`;
+
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
-  margin-bottom: 18px;
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
 `;
 
 const StartButton = styled.button`
@@ -192,15 +190,12 @@ const StartButton = styled.button`
   color: white;
   border: none;
   border-radius: 30px;
-
   font-family: 'NanumSquare Neo OTF';
   font-style: normal;
   font-weight: 800;
   font-size: 15px;
   line-height: 17px;
-
   text-align: center;
-
   color: #ffffff;
 
   &:hover {
@@ -214,10 +209,27 @@ const IconContainer = styled.div`
   margin-left: 10px;
 `;
 
-const Icon = styled.img`
+const HeartIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 8px;
+  cursor: pointer;
+`;
+
+const StyledIcon = styled.img`
   width: 27px;
   height: 24px;
-  margin-left: 10px;
+`;
+
+const StyledOverlayIcon = styled.img`
+  position: absolute;
+  width: 61px;
+  height: 88px;
+  pointer-events: none;
+  top: -102px;
+  right: -15px;
 `;
 
 const Subtitle = styled.h2`
@@ -228,7 +240,6 @@ const Subtitle = styled.h2`
   font-size: 20px;
   line-height: 30px;
   text-align: center;
-
   margin-top: 25px;
 `;
 
