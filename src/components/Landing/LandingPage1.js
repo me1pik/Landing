@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import MelpikLogo from '../../img/Landing/MelpikLogo.svg';
 import LandingBackground from '../../img/Landing/LandingBackground.svg';
 import BoxBackgroundImg from '../../img/Landing/BoxBackgroundImg.svg';
 import SelectIcon from '../../img/Landing/SelectIcon.svg';
 import HeartIcon from '../../img/Landing/HeartIcon.svg';
+import HeartClickIcon from '../../img/Landing/Heart_Click.png';
 import Theme from '../../styles/Theme';
 
 const LandingPage1 = () => {
   const navigate = useNavigate();
-  const [hearts, setHearts] = useState([]);
+  const [isHeartClicked, setIsHeartClicked] = useState(false);
 
   const handleHeartClick = () => {
-    const newHearts = Array.from({ length: 5 }).map(() => ({
-      id: Math.random(),
-      left: Math.random() * 100, // 랜덤한 수평 위치
-      size: Math.random() * 20 + 20, // 랜덤한 크기 (20px~40px)
-      delay: Math.random() * 500, // 랜덤한 지연 시간 (0ms ~ 500ms)
-    }));
-    setHearts(newHearts);
-    setTimeout(() => setHearts([]), 1500); // 1.5초 후 애니메이션 종료
+    setIsHeartClicked(!isHeartClicked);
   };
 
   return (
@@ -46,17 +40,10 @@ const LandingPage1 = () => {
             <IconContainer>
               <Icon src={SelectIcon} alt='Select Icon' />
               <HeartIconContainer onClick={handleHeartClick}>
-                <Icon src={HeartIcon} alt='Heart Icon' />
-                {hearts.map((heart) => (
-                  <HeartAnimation
-                    key={heart.id}
-                    left={heart.left}
-                    size={heart.size}
-                    delay={heart.delay} // 각 하트의 지연 시간
-                  >
-                    ❤️
-                  </HeartAnimation>
-                ))}
+                <Icon
+                  src={isHeartClicked ? HeartClickIcon : HeartIcon}
+                  alt='Heart Icon'
+                />
               </HeartIconContainer>
             </IconContainer>
           </ButtonContainer>
@@ -72,27 +59,6 @@ const LandingPage1 = () => {
 };
 
 export default LandingPage1;
-
-const heartFloat = keyframes`
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-300px) scale(1.5);
-    opacity: 0;
-  }
-`;
-
-const HeartAnimation = styled.div`
-  position: absolute;
-  font-size: ${(props) => props.size}px;
-  animation: ${heartFloat} 1s ease-in-out forwards;
-  top: 0;
-  left: ${(props) => props.left}%;
-  animation-delay: ${(props) => props.delay}ms; /* 지연 시간 적용 */
-  pointer-events: none;
-`;
 
 const HeartIconContainer = styled.div`
   position: relative;
@@ -136,7 +102,6 @@ const Box = styled.div`
   width: 100%;
   height: 405px;
   border-radius: 30px;
-
   margin-top: 16px;
 `;
 
@@ -159,6 +124,7 @@ const BackgroundImage = styled.img`
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  filter: blur(2px);
 `;
 
 const Logo = styled.img`
