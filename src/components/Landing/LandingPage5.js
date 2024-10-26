@@ -70,11 +70,9 @@ const Container = styled.div`
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   background-position: center;
-  min-height: 1000px;
+  min-height: 1032px;
   max-width: 600px;
   margin: 0 auto;
-  border-left: 1px solid ${Theme.colors.gray1};
-  border-right: 1px solid ${Theme.colors.gray1};
 `;
 
 const LandingTitle4 = styled.h1`

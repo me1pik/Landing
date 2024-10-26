@@ -85,11 +85,10 @@ const Container = styled.div`
   width: 100%;
   padding: 60px 20px;
   background-color: ${(props) => props.bgColor || 'transparent'};
-  min-height: 900px;
+  min-height: 1032px;
   max-width: 600px;
   margin: 0 auto;
-  border-left: 1px solid ${Theme.colors.gray1};
-  border-right: 1px solid ${Theme.colors.gray1};
+  border-radius: 20px;
 `;
 
 const LandingTitle3 = styled.h1`
@@ -98,7 +97,7 @@ const LandingTitle3 = styled.h1`
   font-size: 24px;
   line-height: 30px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -127,7 +126,7 @@ const LandingSubtitle3 = styled.p`
   line-height: 30px;
   text-align: center;
   height: 60px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   color: ${({ theme }) => theme.colors.black};
 `;
 

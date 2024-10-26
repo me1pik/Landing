@@ -72,11 +72,9 @@ const Container = styled.div`
   padding: 2rem;
   padding-top: 80px;
   background-color: transparent;
-  min-height: 900px;
+  min-height: 857px;
   max-width: 600px;
   margin: 0 auto;
-  border-left: 1px solid ${Theme.colors.gray1};
-  border-right: 1px solid ${Theme.colors.gray1};
 `;
 
 const Header = styled.header`

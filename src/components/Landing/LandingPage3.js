@@ -40,11 +40,9 @@ const Container = styled.div`
   width: 100%;
   padding: 40px 20px;
   background-color: #ffffff;
-  min-height: 900px;
+  min-height: 1232px;
   max-width: 600px;
   margin: 0 auto;
-  border-left: 1px solid ${Theme.colors.gray1};
-  border-right: 1px solid ${Theme.colors.gray1};
 `;
 
 const LandingTitle2 = styled.h1`

@@ -43,13 +43,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 40px 20px;
+  border-radius: 20px;
   background-color: ${(props) => props.bgColor || 'transparent'};
   min-height: 900px;
   max-width: 600px;
   margin: 0 auto;
-  border-left: 1px solid ${Theme.colors.gray1};
-  border-right: 1px solid ${Theme.colors.gray1};
 `;
 
 const ScrollIndicator = styled.div`
