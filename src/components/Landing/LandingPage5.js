@@ -146,6 +146,7 @@ const Footer = styled.footer`
   font-family: 'NanumSquare Neo OTF', sans-serif;
   font-size: 14px;
   border-top: 1px solid ${({ theme }) => theme.colors.gray4};
+  margin-bottom: 10px;
 `;
 
 const FooterItem = styled.div`
