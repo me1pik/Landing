@@ -43,12 +43,12 @@ const LandingPage2 = () => {
                   'ZOOC',
                   'SANDRO',
                   'it MICHA',
-                  'CC_Collect',
+                  'CC Collect',
                   'DEW L',
                   'LIME',
                   'MAJE',
                   'MICHAA',
-                  'MOJO_S_PHINE',
+                  'MOJO.S.PHINE',
                 ][idx]
               }
             </BrandName>
@@ -181,6 +181,7 @@ const BrandName = styled.span`
   font-weight: 900;
   font-size: 20px;
   line-height: 22px;
+  width: 100%;
   /* identical to box height */
   text-align: center;
 
