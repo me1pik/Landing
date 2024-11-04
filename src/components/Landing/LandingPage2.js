@@ -5,6 +5,12 @@ import HangerIcon from '../../img/Landing/hangerIcon.svg';
 import ZOOCImage from '../../img/Landing/ZoocImg.svg';
 import SANDROImage from '../../img/Landing/Sandro.svg';
 import ITMICHAImage from '../../img/Landing/ItMichaa.svg';
+import CC_Collect from '../../img/Landing/CC_Collect.jpg';
+import DEW_L from '../../img/Landing/DEW_L.jpg';
+import LIME from '../../img/Landing/LIME.jpg';
+import MAJE from '../../img/Landing/MAJE.jpg';
+import MICHAA from '../../img/Landing/MICHAA.jpg';
+import MOJO_S_PHINE from '../../img/Landing/MOJO_S_PHINE.jpg';
 import Theme from '../../styles/Theme';
 
 const LandingPage2 = () => {
@@ -18,10 +24,34 @@ const LandingPage2 = () => {
         <MelpicHighlight>멜픽과 함께합니다!</MelpicHighlight>
       </LandingTitle1>
       <BrandList>
-        {[ZOOCImage, SANDROImage, ITMICHAImage].map((img, idx) => (
+        {[
+          ZOOCImage,
+          SANDROImage,
+          ITMICHAImage,
+          CC_Collect,
+          DEW_L,
+          LIME,
+          MAJE,
+          MICHAA,
+          MOJO_S_PHINE,
+        ].map((img, idx) => (
           <Brand key={idx}>
             <BrandImage src={img} alt={`brand-${idx}`} />
-            <BrandName>{['ZOOC', 'SANDRO', 'it MICHA'][idx]}</BrandName>
+            <BrandName>
+              {
+                [
+                  'ZOOC',
+                  'SANDRO',
+                  'it MICHA',
+                  'CC_Collect',
+                  'DEW L',
+                  'LIME',
+                  'MAJE',
+                  'MICHAA',
+                  'MOJO_S_PHINE',
+                ][idx]
+              }
+            </BrandName>
           </Brand>
         ))}
       </BrandList>
@@ -138,6 +168,7 @@ const BrandImage = styled.img`
   height: 250px;
   object-fit: cover;
   border-radius: 20px;
+  opacity: 0.6;
 `;
 
 const BrandName = styled.span`

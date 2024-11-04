@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import LeftArrowIcon from '../../img/Landing/left-arrow.svg';
 import RightArrowIcon from '../../img/Landing/right-arrow.svg';
-import ScreenImg1 from '../../img/Landing/ScreenImg1.png';
-import ScreenImg2 from '../../img/Landing/ScreenImg2.png';
-import ScreenImg3 from '../../img/Landing/ScreenImg3.png';
+import ScreenImg1 from '../../img/Landing/ScreenImg1.svg';
+import ScreenImg2 from '../../img/Landing/ScreenImg2.svg';
+import ScreenImg3 from '../../img/Landing/ScreenImg3.svg';
 import Theme from '../../styles/Theme';
 
 const LandingPage4 = () => {

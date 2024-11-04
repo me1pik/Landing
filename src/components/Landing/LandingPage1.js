@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import MelpikLogo from '../../img/Landing/MelpikLogo.svg';
 import LandingBackground from '../../img/Landing/LandingBackground.svg';
-import BoxBackgroundImg from '../../img/Landing/BoxBackgroundImg.svg';
+import BoxBackgroundImg from '../../img/Landing/BoxBackgroundImg.png';
 import SelectIcon from '../../img/Landing/SelectIcon.svg';
 import HeartIcon from '../../img/Landing/HeartIcon.svg';
 import HeartClickIcon from '../../img/Landing/Heart_Click.png';
@@ -224,9 +224,9 @@ const StyledIcon = styled.img`
 const StyledOverlayIcon = styled.img`
   position: absolute;
   width: 61px;
-  height: 88px;
+  height: 85px;
   pointer-events: none;
-  top: -102px;
+  top: -92px;
   right: -15px;
 `;
 
