@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import MelpikLogo from '../../img/Landing/MelpikLogo.svg';
+import MelpikLogo from '../img/Landing/MelpikLogo.svg';
 
 const Header = () => {
   const navigate = useNavigate();

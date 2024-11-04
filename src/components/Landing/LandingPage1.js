@@ -6,7 +6,6 @@ import BoxBackgroundImg from '../../img/Landing/BoxBackgroundImg.png';
 import SelectIcon from '../../img/Landing/SelectIcon.svg';
 import HeartIcon from '../../img/Landing/HeartIcon.svg';
 import HeartClickIcon from '../../img/Landing/Heart_Click.png';
-import Header from './/Header';
 import Theme from '../../styles/Theme';
 
 const LandingPage1 = () => {
@@ -20,7 +19,7 @@ const LandingPage1 = () => {
   return (
     <Container>
       <BackgroundImage src={LandingBackground} alt='Landing Background' />
-      <Header />
+
       <MainContent>
         <Title>
           오직 나만의! 나를 위한! <br />
@@ -29,9 +28,10 @@ const LandingPage1 = () => {
         <Box>
           <BoxImage src={BoxBackgroundImg} alt='Landing Background' />
           <ButtonContainer>
-            <StartButton onClick={() => navigate('/LandingDetail')}>
+            {/* <StartButton onClick={() => navigate('/LandingDetail')}>
               지금 시작하기
-            </StartButton>
+            </StartButton> */}
+            <StartButton>지금 시작하기</StartButton>
             <IconContainer>
               <StyledIcon src={SelectIcon} alt='Select Icon' />
               <HeartIconWrapper onClick={handleHeartClick}>
