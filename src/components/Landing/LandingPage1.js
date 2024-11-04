@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import MelpikLogo from '../../img/Landing/MelpikLogo.svg';
 import LandingBackground from '../../img/Landing/LandingBackground.svg';
 import BoxBackgroundImg from '../../img/Landing/BoxBackgroundImg.png';
 import SelectIcon from '../../img/Landing/SelectIcon.svg';
 import HeartIcon from '../../img/Landing/HeartIcon.svg';
 import HeartClickIcon from '../../img/Landing/Heart_Click.png';
+import Header from './/Header';
 import Theme from '../../styles/Theme';
 
 const LandingPage1 = () => {
@@ -20,12 +20,7 @@ const LandingPage1 = () => {
   return (
     <Container>
       <BackgroundImage src={LandingBackground} alt='Landing Background' />
-      <Header>
-        <Logo src={MelpikLogo} alt='Melpik Logo' />
-        <RegisterButton onClick={() => navigate('/')}>
-          사전등록하기
-        </RegisterButton>
-      </Header>
+      <Header />
       <MainContent>
         <Title>
           오직 나만의! 나를 위한! <br />
@@ -75,18 +70,6 @@ const Container = styled.div`
   min-height: 857px;
   max-width: 600px;
   margin: 0 auto;
-`;
-
-const Header = styled.header`
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  z-index: 10;
-  max-width: 600px;
-  margin-top: 41px;
 `;
 
 const Logo = styled.img`
