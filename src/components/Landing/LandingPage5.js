@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import LastImg from '../../img/Landing/LastpageBackground.svg';
+import LastImg from '../../img/Landing/LastpageBackground.png';
 import Theme from '../../styles/Theme';
 
 const LandingPage5 = () => {

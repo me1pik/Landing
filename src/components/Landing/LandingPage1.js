@@ -224,9 +224,9 @@ const StyledIcon = styled.img`
 const StyledOverlayIcon = styled.img`
   position: absolute;
   width: 61px;
-  height: 85px;
+  height: 75px;
   pointer-events: none;
-  top: -92px;
+  top: -82px;
   right: -15px;
 `;
 

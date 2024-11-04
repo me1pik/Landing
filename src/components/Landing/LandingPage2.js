@@ -176,10 +176,15 @@ const BrandName = styled.span`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'NanumSquare Neo OTF';
+  font-style: normal;
   font-weight: 900;
   font-size: 20px;
+  line-height: 22px;
+  /* identical to box height */
   text-align: center;
-  color: black;
+
+  color: #000000;
 `;
 
 const Comment = styled.div`
