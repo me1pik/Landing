@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Theme from './styles/Theme';
@@ -13,7 +18,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/' element={<Landing />} />
+          <Route path='/' element={<Navigate to='/Landing' />} />
+          <Route path='/Landing' element={<Landing />} />
         </Routes>
       </Router>
     </ThemeProvider>
