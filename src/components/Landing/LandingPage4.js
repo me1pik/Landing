@@ -85,7 +85,7 @@ const Container = styled.div`
   width: 100%;
   padding: 60px 20px;
   background-color: ${(props) => props.bgColor || 'transparent'};
-  min-height: 1032px;
+  min-height: 932px;
   max-width: 600px;
   margin: 0 auto;
   border-radius: 20px;
@@ -192,33 +192,4 @@ const Dot = styled.div`
   background-color: ${(props) => (props.isActive ? '#F5AB35' : '#D9D9D9')};
   border-radius: 100px;
   transition: width 0.3s, background-color 0.3s;
-`;
-
-const LandingTitle4 = styled.h1`
-  height: 60px;
-  font-family: 'NanumSquare Neo OTF', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 30px;
-  text-align: center;
-  margin-top: 82px;
-  color: ${({ theme }) => theme.colors.black};
-`;
-
-const Yellow = styled.span`
-  color: ${({ theme }) => theme.colors.yellow};
-  font-family: 'NanumSquare Neo OTF', sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 17px;
-  line-height: 30px;
-  text-align: center;
-`;
-
-const LandingSubtitle4 = styled.h2`
-  font-family: 'NanumSquare Neo OTF', sans-serif;
-  font-size: 16px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.black};
 `;
