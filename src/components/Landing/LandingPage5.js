@@ -1,4 +1,3 @@
-// src/components/Landing/LandingPage5.js
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -13,19 +12,19 @@ const LandingPage5 = () => {
   };
 
   return (
-    <Container bgColor='#FFFDF4' backgroundImage={LastImg}>
+    <Container>
       <LandingTitle4>
         현재 <Yellow>N명</Yellow>의 인플루언서들이 <br /> melpik을 신청했어요!
       </LandingTitle4>
       <ButtonWrapper>
-        {/* <MelpikStartButton>
+        <MelpikStartButton onClick={handleStartClick}>
           melpik 시작하기
-        </MelpikStartButton> */}
-        <MelpikStartButton>melpik 시작하기</MelpikStartButton>
+        </MelpikStartButton>
       </ButtonWrapper>
       <LandingSubtitle4>
         사전예약 마감까지 <BoldText>N일 00:00</BoldText> 시간 남았어요!
       </LandingSubtitle4>
+      <LastImage src={LastImg} alt='Last page background' />
       <Footer>
         <Line1>
           <FooterItem>
@@ -41,6 +40,7 @@ const LandingPage5 = () => {
             <FooterSpan>장용호</FooterSpan>
           </FooterItem>
         </Line1>
+
         <FooterItem>
           <FooterLabel>소재지</FooterLabel>
           <FooterSpan>
@@ -64,16 +64,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   width: 100%;
   padding: 60px 20px;
   background-color: ${(props) => props.bgColor || 'transparent'};
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   background-position: center;
-  min-height: 1032px;
+  min-height: calc(100vh - 100px); /* Footer height adjusted */
   max-width: 600px;
   margin: 0 auto;
+  padding-bottom: 100px; /* Adjust padding for footer spacing */
 `;
 
 const LandingTitle4 = styled.h1`
@@ -82,7 +82,6 @@ const LandingTitle4 = styled.h1`
   font-weight: 400;
   font-size: 17px;
   line-height: 30px;
-  /* or 176% */
   text-align: center;
   opacity: 0.9;
   color: ${({ theme }) => theme.colors.black};
@@ -134,6 +133,14 @@ const LandingSubtitle4 = styled.h2`
 const BoldText = styled.span`
   font-weight: 800;
   color: ${({ theme }) => theme.colors.black};
+`;
+
+// 이미지 스타일 추가
+const LastImage = styled.img`
+  width: 100%;
+  margin-top: 20px;
+  object-fit: cover;
+  height: auto;
 `;
 
 const Footer = styled.footer`
