@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import LastImg from '../../img/Landing/LastpageBackground.png';
+import LastImg from '../../img/Landing/LastImg.png';
+import FirstImg from '../../img/Landing/LastbackgroundImg.svg';
 import Theme from '../../styles/Theme';
 
 const LandingPage5 = () => {
@@ -13,6 +14,7 @@ const LandingPage5 = () => {
 
   return (
     <Container>
+      <FirstImage src={FirstImg} alt='FirstImage page background' />
       <LandingTitle4>
         현재 <Yellow>N명</Yellow>의 인플루언서들이 <br /> melpik을 신청했어요!
       </LandingTitle4>
@@ -83,6 +85,7 @@ const LandingTitle4 = styled.h1`
   font-size: 17px;
   line-height: 30px;
   text-align: center;
+  margin-top: 50px;
   opacity: 0.9;
   color: ${({ theme }) => theme.colors.black};
 `;
@@ -128,6 +131,7 @@ const LandingSubtitle4 = styled.h2`
   font-size: 15px;
   text-align: center;
   color: ${({ theme }) => theme.colors.black};
+  margin-bottom: 40px;
 `;
 
 const BoldText = styled.span`
@@ -135,10 +139,19 @@ const BoldText = styled.span`
   color: ${({ theme }) => theme.colors.black};
 `;
 
-// 이미지 스타일 추가
+const FirstImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+`;
+
 const LastImage = styled.img`
   width: 100%;
-  margin-top: 20px;
+  margin-top: auto;
   object-fit: cover;
   height: auto;
 `;
