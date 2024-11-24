@@ -3,6 +3,8 @@
     publish = "build"
 
 [[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
