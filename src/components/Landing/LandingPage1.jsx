@@ -34,7 +34,7 @@ const LandingPage1 = () => {
             <StartButton>지금 시작하기</StartButton>
             <IconContainer>
               <StyledIcon src={SelectIcon} alt='Select Icon' />
-              <HeartIconWrapper>
+              <HeartIconWrapper onClick={handleHeartClick}>
                 <StyledIcon src={HeartIcon} alt='Heart Icon' />
                 {isHeartClicked && (
                   <StyledOverlayIcon
