@@ -1,5 +1,4 @@
-// src/components/Landing/LandingPage4.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import LeftArrowIcon from '../../img/Landing/left-arrow.svg';
@@ -11,6 +10,7 @@ import Theme from '../../styles/Theme';
 
 const LandingPage4 = () => {
   const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const navigate = useNavigate();
 
   const screens = [
@@ -34,6 +34,22 @@ const LandingPage4 = () => {
       ),
     },
   ];
+
+  useEffect(() => {
+    const images = screens.map((screen) => screen.img);
+    let loadedImages = 0;
+
+    images.forEach((imgSrc) => {
+      const img = new Image();
+      img.src = imgSrc;
+      img.onload = () => {
+        loadedImages += 1;
+        if (loadedImages === images.length) {
+          setImagesLoaded(true);
+        }
+      };
+    });
+  }, [screens]);
 
   const handlePrevClick = () =>
     setCurrentScreenIndex((prevIndex) =>
@@ -59,7 +75,15 @@ const LandingPage4 = () => {
           <ArrowIcon src={LeftArrowIcon} alt='Previous' />
         </ArrowButton>
         <ScreenImageContainer>
-          <ScreenImage src={screens[currentScreenIndex].img} alt='Screen' />
+          {imagesLoaded ? (
+            <ScreenImage
+              src={screens[currentScreenIndex].img}
+              alt='Screen'
+              loading='lazy'
+            />
+          ) : (
+            <LoadingSpinner />
+          )}
         </ScreenImageContainer>
         <ArrowButton onClick={handleNextClick}>
           <ArrowIcon src={RightArrowIcon} alt='Next' />
@@ -152,6 +176,7 @@ const ScreenImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
 `;
 
 const ArrowButton = styled.button`
@@ -192,4 +217,23 @@ const Dot = styled.div`
   background-color: ${(props) => (props.isActive ? '#F5AB35' : '#D9D9D9')};
   border-radius: 100px;
   transition: width 0.3s, background-color 0.3s;
+`;
+
+const LoadingSpinner = styled.div`
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f0f0f0;
+  border-top: 5px solid #f5ab35;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
