@@ -19,9 +19,7 @@ const LandingPage5 = () => {
         현재 <Yellow>N명</Yellow>의 인플루언서들이 <br /> melpik을 신청했어요!
       </LandingTitle4>
       <ButtonWrapper>
-        <MelpikStartButton onClick={handleStartClick}>
-          melpik 시작하기
-        </MelpikStartButton>
+        <MelpikStartButton>melpik 시작하기</MelpikStartButton>
       </ButtonWrapper>
       <LandingSubtitle4>
         사전예약 마감까지 <BoldText>N일 00:00</BoldText> 시간 남았어요!
