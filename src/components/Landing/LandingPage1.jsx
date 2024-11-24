@@ -162,6 +162,7 @@ const ButtonContainer = styled.div`
   position: absolute;
   bottom: 18px;
   width: 100%;
+  gap: 20px;
 `;
 
 const StartButton = styled.button`
@@ -187,7 +188,6 @@ const StartButton = styled.button`
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 30px;
 `;
 
 const HeartIconWrapper = styled.div`
