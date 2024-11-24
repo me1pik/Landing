@@ -1,12 +1,12 @@
 // src/components/Landing/Landing.js
 import React from 'react';
 import styled from 'styled-components';
-import LandingPage1 from '../components/Landing/LandingPage1.js';
-import LandingPage2 from '../components/Landing/LandingPage2.js';
-import LandingPage3 from '../components/Landing/LandingPage3.js';
-import LandingPage4 from '../components/Landing/LandingPage4.js';
-import LandingPage5 from '../components/Landing/LandingPage5.js';
-import Theme from '../styles/Theme';
+import LandingPage1 from '../components/Landing/LandingPage1.jsx';
+import LandingPage2 from '../components/Landing/LandingPage2.jsx';
+import LandingPage3 from '../components/Landing/LandingPage3.jsx';
+import LandingPage4 from '../components/Landing/LandingPage4.jsx';
+import LandingPage5 from '../components/Landing/LandingPage5.jsx';
+import Theme from '../styles/Theme.js';
 
 const Landing = () => {
   return (
