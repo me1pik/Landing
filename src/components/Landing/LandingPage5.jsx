@@ -28,31 +28,38 @@ const LandingPage5 = () => {
       </LandingSubtitle4>
       <LastImage src={LastImg} alt='Last page background' />
       <Footer>
-        <Line1>
-          <FooterItem>
-            <FooterLabel>상호</FooterLabel>
-            <FooterSpan>멜픽(melpik)</FooterSpan>
-          </FooterItem>
-          <FooterItem>
-            <FooterLabel>대표</FooterLabel>
-            <FooterSpan>황유민</FooterSpan>
-          </FooterItem>
-          <FooterItem>
-            <FooterLabel>개인정보책임자</FooterLabel>
-            <FooterSpan>장용호</FooterSpan>
-          </FooterItem>
-        </Line1>
+        <FooterContent>
+          <Line>
+            <FooterItem>
+              <FooterLabel>상호</FooterLabel>
+              <FooterSpan>멜픽(melpik)</FooterSpan>
+            </FooterItem>
+            <FooterItem>
+              <FooterLabel>대표</FooterLabel>
+              <FooterSpan>장용호</FooterSpan>
+            </FooterItem>
+            <FooterItem>
+              <FooterLabel>개인정보책임자</FooterLabel>
+              <FooterSpan>황민서</FooterSpan>
+            </FooterItem>
+          </Line>
 
-        <FooterItem>
-          <FooterLabel>소재지</FooterLabel>
-          <FooterSpan>
-            서울시 금천구 디지털로9길 41, 1008호 (삼성IT해링턴타워)
-          </FooterSpan>
-        </FooterItem>
-        <FooterItem>
-          <FooterLabel>이메일</FooterLabel>
-          <FooterSpan>대표메일</FooterSpan>
-        </FooterItem>
+          <Line>
+            <FooterItem>
+              <FooterLabel>소재지</FooterLabel>
+              <FooterSpan>
+                서울시 금천구 디지털로9길 41, 1008호 (삼성IT해링턴타워)
+              </FooterSpan>
+            </FooterItem>
+          </Line>
+
+          <Line>
+            <FooterItem>
+              <FooterLabel>이메일</FooterLabel>
+              <FooterSpan> liftcomma@gmail.com </FooterSpan>
+            </FooterItem>
+          </Line>
+        </FooterContent>
       </Footer>
     </Container>
   );
@@ -169,12 +176,24 @@ const Footer = styled.footer`
   margin-bottom: 10px;
 `;
 
+const FooterContent = styled.div`
+  width: 100%;
+  padding: 0 20px;
+`;
+
+const Line = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  flex-wrap: nowrap;
+`;
+
 const FooterItem = styled.div`
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  font-size: 12px;
-  margin: 0 28px;
+  margin-bottom: 3px;
+  flex: 1;
+  min-width: 100px;
 `;
 
 const FooterLabel = styled.label`
@@ -183,18 +202,15 @@ const FooterLabel = styled.label`
   font-weight: 700;
   font-size: 10px;
   line-height: 18px;
-  margin-right: 5px;
+  color: #000000;
+  margin-right: 10px;
 `;
 
 const FooterSpan = styled.span`
-  font-weight: 400;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
+  font-weight: 400;
   font-size: 10px;
   line-height: 18px;
-`;
-
-const Line1 = styled.div`
-  display: flex;
-  flex-direction: row;
+  color: #000000;
 `;
